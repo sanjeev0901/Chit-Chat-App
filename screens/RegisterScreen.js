@@ -1,5 +1,6 @@
 import { View, StyleSheet, Alert } from "react-native";
 import React from "react";
+import * as Font from "expo-font";
 import { Input, Button } from "react-native-elements";
 import AppHeader, { customFonts } from "../components/Header";
 import AppLoading from "expo-app-loading";
@@ -26,12 +27,11 @@ export default function LoginScreen({ navigation }) {
               : "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png",
           })
           .then(() => {
-            // Update successful
-            // ...
+            Alert.alert('You have been registered')
+            navigation.navigate("")
           })
           .catch((error) => {
-            // An error occurred
-            // ...
+            console.log('error occured')
           });
       })
       .catch((error) => {
@@ -70,6 +70,7 @@ export default function LoginScreen({ navigation }) {
           labelStyle={{ color: "black" }}
           value={name}
           leftIcon={{ type: "material", name: "badge" }}
+          inputStyle={{color:'red'}}
         />
         <Input
           placeholder='Enter your Email'
@@ -79,6 +80,7 @@ export default function LoginScreen({ navigation }) {
           labelStyle={{ color: "black" }}
           value={email}
           leftIcon={{ type: "material", name: "email" }}
+          inputStyle={{color:'red'}}
         />
         <Input
           placeholder='Enter your Password'
@@ -89,15 +91,17 @@ export default function LoginScreen({ navigation }) {
           value={password}
           leftIcon={{ type: "material", name: "lock" }}
           secureTextEntry={true}
+          inputStyle={{color:'red'}}
         />
         <Input
-          placeholder='Enter Image URL'
+          placeholder='Enter Image URL(Optional)'
           placeholderTextColor='red'
           onChangeText={(text) => setImageURL(text)}
           label='Profile Picture'
           labelStyle={{ color: "black" }}
           value={imageURL}
           leftIcon={{ type: "material", name: "face" }}
+          inputStyle={{color:'red'}}
         />
         <View style={{ alignItems: "center" }}>
           <Button

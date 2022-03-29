@@ -16,10 +16,8 @@ export default function AppHeader(props) {
   React.useEffect(() => {
     async function loadResourcesAndDataAsync() {
       try {
-        // Load fonts
         await Font.loadAsync(customFonts);
       } catch (e) {
-        // We might want to provide this error information to an error reporting service
         console.warn(e);
       } finally {
         setLoadingComplete(true);
