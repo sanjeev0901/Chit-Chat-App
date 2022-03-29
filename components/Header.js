@@ -1,5 +1,6 @@
 import React from "react";
-import { Header } from "react-native-elements";
+import { View } from "react-native";
+import { Header, Avatar } from "react-native-elements";
 import AppLoading from "expo-app-loading";
 import * as Font from "expo-font";
 
@@ -34,9 +35,21 @@ export default function AppHeader(props) {
       <Header
         centerComponent={{
           text: "Chit Chat App",
-          style: { color: "#fff", fontSize: 24, fontFamily: "Bubblegum-Sans" },
+          style: {
+            color: "#fff",
+            fontSize: 24,
+            fontFamily: "Bubblegum-Sans",
+          },
         }}
+        leftComponent={
+          <Avatar
+            rounded
+            source={require("../assets/logo.jpg")}
+            size='medium'
+          />
+        }
         containerStyle={{
+          alignContent: "center",
           backgroundColor: "#6d56a3",
           justifyContent: "space-around",
         }}

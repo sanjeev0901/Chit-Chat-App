@@ -21,12 +21,14 @@
     "android": {
       "package": "com.testuser.ChitChatApp",
       "adaptiveIcon": {
-        "foregroundImage": "./assets/logo.png",
+        "foregroundImage": "./assets/appLogo.png",
         "backgroundColor": "#FFFFFF"
       }
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "Developer name : Sanjeev Balaji\nThis is a friendly app created for chatting.\nEnjoy using the app and chatting!!",
+    "githubUrl": "https://github.com/sanjeev0901/Chit-Chat-App"
   }
 }
